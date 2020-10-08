@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10"
     compileOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
     compileOnly "com.github.kittinunf.fuel:fuel:2.2.1"
@@ -59,4 +59,29 @@ uploadArchives {
             }
         }
     }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task classesJar(type: Jar) {
+    from "$buildDir/intermediates/classes/release"
+}
+
+artifacts {
+    archives classesJar
+    archives javadocJar
+    archives sourcesJar
 }

@@ -4,6 +4,5 @@
   <groupId>kuu.atalk</groupId>
   <artifactId>core</artifactId>
   <version>1.0.0</version>
-  <packaging>aar</packaging>
   <dependencies/>
 </project>
