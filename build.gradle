@@ -16,8 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {url 'https://fumiya-kume.github.io/atalk_droid/repository'}
         google()
+        maven {url 'https://fumiya-kume.github.io/atalk_droid/repository'}
+        maven { url "https://repo1.maven.org/maven2/"}
         jcenter()
     }
 }

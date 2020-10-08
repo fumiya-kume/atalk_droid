@@ -43,7 +43,19 @@ uploadArchives {
             pom.groupId = 'kuu.atalk'
             pom.artifactId = 'core'
             pom.project {
-                packaging "aar", "jar"
+                packaging "aar"
+            }
+
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.implementation.allDependencies.each { dependency ->
+                    if (dependency.name != 'unspecified') {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', dependency.group)
+                        dependencyNode.appendNode('artifactId', dependency.name)
+                        dependencyNode.appendNode('version', dependency.version)
+                    }
+                }
             }
         }
     }
