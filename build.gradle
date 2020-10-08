@@ -26,3 +26,24 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+
+project.afterEvaluate {
+    def isAndroidLibraryProject = project.plugins.hasPlugin('com.android.library')
+    if(isAndroidLibraryProject) {
+        task copyDeps(type:Copy) {
+            from configurations.compile {
+                include '**/*.jar'
+            }
+            into "./build/intermediates/bundles/release/libs/"
+        }
+        bundleRelease.dependsOn copyDeps
+
+        task copyDebugDeps(type:Copy) {
+            from configurations.compile {
+                include '**/*.jar'
+            }
+            into "./build/intermediates/bundles/debug/libs/"
+        }
+        bundleDebug.dependsOn copyDebugDeps
+    }
+}
