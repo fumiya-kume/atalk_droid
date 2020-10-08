@@ -12,39 +12,14 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="maven2" />
+      <option name="name" value="maven2" />
+      <option name="url" value="https://repo1.maven.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="BintrayJCenter" />
       <option name="name" value="BintrayJCenter" />
       <option name="url" value="https://jcenter.bintray.com/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="Google" />
-      <option name="name" value="Google" />
-      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="http://fumiya-kume.github.io/ai_talk_droid/repository" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="https://fumiya-kume.github.io/ai_talk_droid/repository" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="https://fumiya-kume.github.io/ai_talk_droid" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="http://fumiya-kume.github.io/ai_talk_droid/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="http://fumiya-kume.github.com/ai_talk_droid/repository" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="maven" />
@@ -52,14 +27,9 @@
       <option name="url" value="https://fumiya-kume.github.io/atalk_droid/repository" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="maven2" />
-      <option name="name" value="maven2" />
-      <option name="url" value="https://repo1.maven.org/maven2/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="https://fumiya-kume.github.io/atalk_droid/" />
+      <option name="id" value="Google" />
+      <option name="name" value="Google" />
+      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
     </remote-repository>
   </component>
 </project>
