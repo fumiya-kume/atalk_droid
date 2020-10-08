@@ -24,7 +24,7 @@ jobs:
         with:
           java-version: 1.8
       - name: build
-        run: gradle build
+        run: gradle :core:build
       - name: Publish package
         run: mvn -B deploy
         env:
