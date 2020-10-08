@@ -1,4 +1,4 @@
-package kuu.atalk.core
+package kuu.atalk
 
 import android.media.AudioAttributes
 import android.media.AudioFormat
@@ -6,6 +6,7 @@ import android.media.AudioTrack
 import com.github.kittinunf.fuel.httpGet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kuu.atalk.ATalkClient
 
 class ATalkClientImpl
     (
