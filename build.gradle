@@ -21,6 +21,12 @@ allprojects {
     }
 }
 
+subprojects {
+    repositories {
+        maven {url 'https://fumiya-kume.github.io/ai_talk_droid/repository'}
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
