@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven'
-apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -47,19 +46,6 @@ uploadArchives {
             pom.version = '1.0.0'
             pom.groupId = 'kuu.atalk'
             pom.artifactId = 'core'
-        }
-    }
-}
-
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/fumiya-kume/atalk_droid")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-            }
         }
     }
 }

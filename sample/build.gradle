@@ -31,6 +31,10 @@ android {
     }
 }
 
+repositories {
+    maven {url 'https://fumiya-kume.github.io/atalk_droid/repository'}
+}
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

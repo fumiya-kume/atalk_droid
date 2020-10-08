@@ -4,12 +4,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        repositories {
-            maven {url 'http://fumiya-kume.github.com/ai_talk_droid/'}
-        }
-        repositories {
-            maven {url 'https://fumiya-kume.github.io/atalk_droid/repository'}
-        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
@@ -24,15 +18,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        repositories {
-            maven {url 'http://fumiya-kume.github.com/ai_talk_droid/repository'}
-        }
-    }
-}
-
-subprojects {
-    repositories {
-        maven {url 'http://fumiya-kume.github.com/ai_talk_droid/repository'}
     }
 }
 
