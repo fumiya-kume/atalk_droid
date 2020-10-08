@@ -42,6 +42,9 @@ uploadArchives {
             pom.version = '1.0.0'
             pom.groupId = 'kuu.atalk'
             pom.artifactId = 'core'
+            pom.project {
+                packaging "aar"
+            }
         }
     }
 }
