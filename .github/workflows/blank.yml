@@ -23,7 +23,9 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: build
+        run: gradle build
       - name: Publish package
-        run: cd repository && mvn -B deploy
+        run: mvn -B deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
