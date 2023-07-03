@@ -6,5 +6,5 @@
   "separateMultipleMajor": true,
   "separateMinorPatch": true,
   "transitiveRemediation": true,
-  "autoMerge": true
+  # "autoMerge": true
 }
