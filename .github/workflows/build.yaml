@@ -30,7 +30,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: lint
-        run: ./gradlew ktlintCheck
+        run: ./gradlew lint
       
       
       
