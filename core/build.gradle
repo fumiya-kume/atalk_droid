@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 33
@@ -35,25 +35,28 @@ dependencies {
 
 def repo = new File(rootDir, "repository")
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = '1.0.0'
-            pom.groupId = 'kuu.atalk'
-            pom.artifactId = 'core'
-            pom.project {
-                packaging "aar"
-            }
+afterEvaluate{
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                repositories {
+                    "file://${repo.absolutePath}"
+                }
+                pom{
+                    version = "1.0.0"
+                    group = 'kuu.atalk'
+                    packaging = "aar"
+                }
 
-            pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
-                configurations.implementation.allDependencies.each { dependency ->
-                    if (dependency.name != 'unspecified') {
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', dependency.group)
-                        dependencyNode.appendNode('artifactId', dependency.name)
-                        dependencyNode.appendNode('version', dependency.version)
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    configurations.implementation.allDependencies.each { dependency ->
+                        if (dependency.name != 'unspecified') {
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', dependency.group)
+                            dependencyNode.appendNode('artifactId', dependency.name)
+                            dependencyNode.appendNode('version', dependency.version)
+                        }
                     }
                 }
             }
