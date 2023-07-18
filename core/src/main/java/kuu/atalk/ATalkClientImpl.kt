@@ -6,14 +6,13 @@ import android.media.AudioTrack
 import com.github.kittinunf.fuel.httpGet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kuu.atalk.ATalkClient
 
 class ATalkClientImpl
     (
-    private val baseUrl:String
+    private val baseUrl: String
 ) : ATalkClient {
-    suspend fun say(content:String){
-        withContext(Dispatchers.IO){
+    suspend fun say(content: String) {
+        withContext(Dispatchers.IO) {
             val url = "${baseUrl}?$content"
             val result = url.httpGet()
                 .useHttpCache(true)
