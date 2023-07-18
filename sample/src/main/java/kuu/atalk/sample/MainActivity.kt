@@ -7,8 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-import kotlinx.android.synthetic.main.activity_main.*
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
