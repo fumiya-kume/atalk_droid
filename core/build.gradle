@@ -27,7 +27,7 @@ android {
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22"
     compileOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
     compileOnly "com.github.kittinunf.fuel:fuel:2.3.1"
 }
